@@ -1,0 +1,56 @@
+<form action="{% url 'submit_obituary' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="date_of_birth">Date of Birth:</label>
+    <input type="date" id="date_of_birth" name="date_of_birth" required>
+    <label for="date_of_death">Date of Death:</label>
+    <input type="date" id="date_of_death" name="date_of_death" required>
+    <label for="content">Content:</label>
+    <textarea id="content" name="content" required></textarea>
+    <label for="author">Author:</label>
+    <input type="text" id="author" name="author" required>
+    <label for="photo">Photo:</label>
+    <input type="file" id="photo" name="photo">
+    <button type="submit">Submit</button>
+</form>
+<style>
+/* styles.css */
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: auto;
+}
+label {
+    margin-top: 10px;
+}
+input, textarea {
+    padding: 8px;
+    margin-top: 5px;
+}
+button {
+    margin-top: 20px;
+    padding: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+img {
+    max-width: 100px;
+    height: auto;
+}
+</style>
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<script src="{% static 'js/validation.js' %}"></script>
